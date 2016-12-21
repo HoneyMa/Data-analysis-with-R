@@ -5,8 +5,13 @@
 
 ### 1.1 Data Input
 There're 3 ways to get your data ready in R.
-First, you may call a edit window, like :
 
+First, you may call a edit window, like :
+```R
+options(digits = 2)
+roster <- data.frame(Student=character(0), Math=numeric(0), Science=numeric(0), English=numeric(0))
+roster <- edit(roster)
+```
 Second, you may create seperate vectors and then integrate them into a dataframe or something. like:
 ```R
 manager <- c(1,2,3,4,5)
@@ -22,7 +27,4 @@ q5 <- c(5, 5, 2, NA, 1)
 leadership <- data.frame(manager, date, country, gender, age,
                          q1, q2, q3, q4, q5, stringsAsFactors = FALSE)
 ```
-
-
-
 Last, you could import files like csv, spss, excel etc. in R.
