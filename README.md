@@ -5,10 +5,8 @@
 
 ### 1.1 Data Input
 There're 3 ways to get your data ready in R.
-
 First, you may call a edit window, like :
 ```R
-options(digits = 2)
 roster <- data.frame(Student=character(0), Math=numeric(0), Science=numeric(0), English=numeric(0))
 roster <- edit(roster)
 ```
@@ -28,3 +26,12 @@ leadership <- data.frame(manager, date, country, gender, age,
                          q1, q2, q3, q4, q5, stringsAsFactors = FALSE)
 ```
 Last, you could import files like csv, spss, excel etc. in R.
+
+### 1.2 Data Recode
+Sometimes you need recode the numeric data to category data for analyze. Like:
+```R
+leadership$age[leadership$age == 99] <- NA
+leadership$agecat [leadership$age > 75] <- "Elder"
+leadership$agecat [leadership$age >=55 & leadership$age <= 75] <- "Middle Aged"
+leadership$agecat [leadership$age < 55] <- "Young"
+```
