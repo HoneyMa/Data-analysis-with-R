@@ -9,6 +9,8 @@ First, you may call a edit window, like :
 ```R
 roster <- data.frame(Student=character(0), Math=numeric(0), Science=numeric(0), English=numeric(0))
 roster <- edit(roster)
+# tips: make sure you save your dataset(here, which is roster) to local
+save(roster, file = "x.RData")
 ```
 Second, you may create seperate vectors and then integrate them into a dataframe or something. like:
 ```R
