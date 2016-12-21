@@ -81,3 +81,17 @@ roster <- cbind(Lastname, Firstname, roster[,-1])
 # rank by lastname and firstname
 roster <- roster[order(Lastname, Firstname), ]
 ```
+## 2.Descriptive statistics
+## 3.Inferencial statistics
+### 3.1 t test
+### 3.2 The Analysis of Variance
+One-way ANOVA
+```R
+attach(iris)
+names(iris)
+aggregate(Sepal.Length, by=list(Species), FUN=mean)
+aggregate(Sepal.Length, by=list(Species), FUN=sd)
+fit <- aov(Sepal.Length ~ Species)
+summary(fit)
+detach(iris)
+```
