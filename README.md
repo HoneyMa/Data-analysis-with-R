@@ -1,5 +1,5 @@
 # Data-analysis-with-R
-> This is my study notes of data analysis with R
+> This is my study notes of data analysis with R.
 
 ## 1.Basic data management
 
@@ -35,3 +35,16 @@ leadership$agecat [leadership$age > 75] <- "Elder"
 leadership$agecat [leadership$age >=55 & leadership$age <= 75] <- "Middle Aged"
 leadership$agecat [leadership$age < 55] <- "Young"
 ```
+### 1.3 Rename the variable
+```R
+names(leadership)[1] <- "ManagerID"
+names(leadership)[2] <- "testDate"
+names(leadership)[6:10] <- c("item1", "item2", "item3", "item4", "item5")
+```
+### 1.4 Select cases from the dataset
+You may select some cases or obversations from the whole dataset for further analyze, use this:
+```R
+newdata <- leadership[leadership$gender == "M" & leadership$age >30]
+```
+
+### 1.5 Case study: 
