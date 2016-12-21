@@ -2,7 +2,6 @@
 > This is my study notes of data analysis with R.
 
 ## 1.Basic data management
-
 ### 1.1 Data Input
 There're 3 ways to get your data ready in R.
 First, you may call a edit window, like :
@@ -48,7 +47,6 @@ You may select some cases or obversations from the whole dataset for further ana
 ```R
 newdata <- leadership[leadership$gender == "M" & leadership$age >30]
 ```
-
 ### 1.5 Case study: Comparision of students' grades in different subjects
 You need determine the overall performance of several students by their grades in English, Math, and Science, which were scored with different standards.
 ```R
