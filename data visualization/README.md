@@ -34,3 +34,4 @@ wordcloud2(miui, size = 2, fontFamily = "微软雅黑",
 letterCloud(miui, word = "MIUI", wordSize = 2,color = 'random-dark',backgroundColor = "snow")
 
 ```
+![wordcloud1](wordcloud_women.png)
