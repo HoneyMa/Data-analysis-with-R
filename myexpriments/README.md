@@ -25,4 +25,5 @@ fit <- with(md,aov(value ~ variable))
 summary(fit)
 library(gplots)
 with(md,plotmeans(value ~ variable, xlab = "Setsize", ylab = "Accuracy", main="Mean plot\nwith 95% CI"))
-```![](ANOVA Rpolt.png)
+```
+![](ANOVA Rplot.png)
