@@ -39,3 +39,5 @@ library(gplots)
 with(md,plotmeans(value ~ variable, xlab = "Setsize", ylab = "Accuracy", main="Mean plot\nwith 95% CI"))
 ```
 ![](ANOVA Rplot.png)
+
+>问题：如何处理异常观察值，row
