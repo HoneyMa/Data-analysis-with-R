@@ -30,6 +30,7 @@ Residuals   105 1.2507 0.01191
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 ```R
+#绘制各组均值及其置信区间的图形
 library(gplots)
 with(md,plotmeans(value ~ variable, xlab = "Setsize", ylab = "Accuracy", main="Mean plot\nwith 95% CI"))
 ```
