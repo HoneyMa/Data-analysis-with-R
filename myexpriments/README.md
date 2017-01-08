@@ -27,7 +27,6 @@ summary(fit)
   Df Sum Sq Mean Sq F value   Pr(>F)    
 variable      4 0.2589 0.06472   5.434 0.000514 ***
 Residuals   105 1.2507 0.01191                     
----
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 ```R
