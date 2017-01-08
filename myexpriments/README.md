@@ -19,4 +19,10 @@ accdata$ave <- apply(accdata[,2:5],1,mean)
 md = melt(accdata, id=c("Sub"))
 # 通过箱线图表现不同setsize水平下，被试的正确率分布
 with(md,boxplot(value ~ variable, main = "Accuracy Under Each Setsize", xlab = "Setsize", ylab = "Accuracy"))
-```
+# 单因素方差分析
+with(md, aggregate(value, by=list(variable), FUN=mean))
+fit <- with(md,aov(value ~ variable))
+summary(fit)
+library(gplots)
+with(md,plotmeans(value ~ variable, xlab = "Setsize", ylab = "Accuracy", main="Mean plot\nwith 95% CI"))
+```![](ANOVA Rpolt.png)
