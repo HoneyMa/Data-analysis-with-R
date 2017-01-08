@@ -23,6 +23,14 @@ with(md,boxplot(value ~ variable, main = "Accuracy Under Each Setsize", xlab = "
 with(md, aggregate(value, by=list(variable), FUN=mean))
 fit <- with(md,aov(value ~ variable))
 summary(fit)
+```
+  Df Sum Sq Mean Sq F value   Pr(>F)    
+variable      4 0.2589 0.06472   5.434 0.000514 ***
+Residuals   105 1.2507 0.01191                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+```R
 library(gplots)
 with(md,plotmeans(value ~ variable, xlab = "Setsize", ylab = "Accuracy", main="Mean plot\nwith 95% CI"))
 ```
