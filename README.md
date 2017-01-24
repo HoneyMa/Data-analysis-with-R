@@ -84,10 +84,11 @@ roster <- cbind(Lastname, Firstname, roster[,-1])
 roster <- roster[order(Lastname, Firstname), ]
 ```
 ### 1.6 数据转换
-|目的|函数|
-|----|----|
-|向量分组|zzzz|
-
+目的|函数
+----|----
+向量分组|zzzz
+将函数应用于每个列表元素||
+将函数应用于行||
 
 ## 2.Descriptive statistics
 ### 多组散点图
