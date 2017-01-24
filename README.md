@@ -84,12 +84,15 @@ roster <- cbind(Lastname, Firstname, roster[,-1])
 roster <- roster[order(Lastname, Firstname), ]
 ```
 ### 1.6 数据转换
-目的|函数
-----|----
-向量分组|zzzz
-将函数应用于每个列表元素||
-将函数应用于行||
-
+目的|数据类型|函数
+----|----|-------
+向量分组||split(), unstack()|
+将函数应用于每个列表元素|list|lapply(lst,fun)返回列表，sapply()返回向量或矩阵|
+将函数应用于矩阵每行|matrix|results <- apply(matrix, 1, fun) |
+将函数应用于矩阵每列|matrix|results <- apply(matrix, 2, fun) |
+将函数应用于组数据|向量，分组因子|tapply(x,f,fun)
+将函数应用于行组|dataframe|by(dfrm, fact, fun) fact是分组因子
+将函数应用于平行向量或列表|
 ## 2.Descriptive statistics
 ### 多组散点图
 ```R
