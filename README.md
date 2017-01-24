@@ -83,6 +83,12 @@ roster <- cbind(Lastname, Firstname, roster[,-1])
 # rank by lastname and firstname
 roster <- roster[order(Lastname, Firstname), ]
 ```
+### 1.6 数据转换
+|目的|函数|
+|----|----|
+|向量分组|zzzz|
+
+
 ## 2.Descriptive statistics
 ### 多组散点图
 ```R
