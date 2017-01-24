@@ -92,7 +92,7 @@ roster <- roster[order(Lastname, Firstname), ]
 将函数应用于矩阵每列|matrix|results <- apply(matrix, 2, fun) |
 将函数应用于组数据|向量，分组因子|tapply(x,f,fun)
 将函数应用于行组|dataframe|by(dfrm, fact, fun) fact是分组因子
-将函数应用于平行向量或列表|
+将函数应用于平行向量或列表||mapply
 ## 2.Descriptive statistics
 ### 多组散点图
 ```R
