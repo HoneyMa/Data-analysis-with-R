@@ -1,3 +1,27 @@
+#聚类分析 hclust
+
+```
+#导入数据，并将数据中转换为矩阵
+data=iris[,-5]
+dist.e=dist(data,method='euclidean')
+# 热力图
+heatmap(as.matrix(dist.e),labRow = F, labCol = F)
+#聚类 并将结果限制为3类
+model1=hclust(dist.e,method='ward')
+result=cutree(model1,k=3)
+#使用MDS降维
+mds=cmdscale(dist.e,k=2,eig=T)
+x = mds$points[,1]
+y = mds$points[,2]
+#通过ggplot2可视化的表现出来
+library(ggplot2)
+p=ggplot(data.frame(x,y),aes(x,y))
+p+geom_point(size=3,alpha=0.8,
+             aes(colour=factor(result),
+               shape=iris$Species))
+
+```
+
 # sankeyvalue
 ```R
 library(networkD3)
