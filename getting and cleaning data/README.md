@@ -1,3 +1,4 @@
+# 第一步：数据准备
 ## 1.Basic data management
 ### 1.1 Data Input
 There're 3 ways to get your data ready in R.
