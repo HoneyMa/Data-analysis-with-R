@@ -1,6 +1,6 @@
 # 第二步：数据分析
-## 2.Descriptive statistics
-### 多组散点图
+## 1.Descriptive statistics
+### 1.1 多组散点图
 ```R
 f <- factor(iris$Speices)
 with(iris, plot(Petal.Length, Petal.Width, pch = as.interger(f)))
@@ -13,6 +13,31 @@ gird()#绘制网格
 data(Cars93, package="MASS)
 coplot(Horsepower ~ MPG.city | Origin, data=Cars93)
 ```
+### 2.1 条形图
+在条形图上面添加置信区间，使用gplots包中的barplot2。
+```R
+library(gplots)
+attach(airquality) # 这是一个关于空气质量的数据包
+```
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6
+```R
+heights <- tapply(Temp, Month, mean)
+lower <- tapply(Temp, Month, function(v) t.test(v)$conf.int[1])
+upper <- tapply(Temp, Month, function(v) t.test(v)$conf.int[2])
+barplot2(heights, plot.ci = T, ci.l = lower, ci.u = upper)
+barplot2(heights, plot.ci = T, ci.l = lower, ci.u = upper,
+          ylim=c(50,90), xpd=FALSE,
+          main = "Mean Temp. By Month",
+          names.arg = c("May","Jun", "Jul", "Aug", "Sep"), #改变坐标轴的文字
+          ylab = "Temp(deg.F)")
+```
+
 ## 3.Inferencial statistics
 ### 3.1 t test
 ### 3.2 The Analysis of Variance
