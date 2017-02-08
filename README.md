@@ -5,6 +5,7 @@
 f <- factor(iris$Speices)
 with(iris, plot(Petal.Length, Petal.Width, pch = as.interger(f)))
 legend(1.5, 2.4, as.character(levels(f)), pch=1:length(levels(f)))
+gird()#绘制网格
 ```
 ![](irisRplot.png)
 
