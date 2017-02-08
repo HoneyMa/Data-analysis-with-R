@@ -13,6 +13,15 @@ gird()#绘制网格
 data(Cars93, package="MASS)
 coplot(Horsepower ~ MPG.city | Origin, data=Cars93)
 ```
+### 改变颜色
+图像上方与下方分别用不同的颜色显示
+``` R
+> x = runif(20, min=-3, max = 3)
+> plot(x, type = "h", lwd=3)
+> colors <- ifelse(x >=0, "black", "gray")
+> plot(x, type = "h", lwd=3, col=colors)
+```
+
 ### 2.1 条形图
 在条形图上面添加置信区间，使用gplots包中的barplot2。
 ```R
