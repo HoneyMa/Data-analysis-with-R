@@ -8,7 +8,11 @@ legend(1.5, 2.4, as.character(levels(f)), pch=1:length(levels(f)))
 gird()#绘制网格
 ```
 ![](irisRplot.png)
-
+### 每个因子水平下一副散点图
+```R
+data(Cars93, package="MASS)
+coplot(Horsepower ~ MPG.city | Origin, data=Cars93)
+```
 ## 3.Inferencial statistics
 ### 3.1 t test
 ### 3.2 The Analysis of Variance
