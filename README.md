@@ -174,4 +174,10 @@ library(psych)
 principal(core)
 fa.parallel(core, fa="both", n.iter = 357, show.legend = T)
 principal(core,nfactors = 6)
+#利用JSON直接替换选项与问题
+install.packages("rjson")
+library('rjson')
+code <- fromJSON(file="code.json")
+code$Q1$code$"1"
+
 ```
