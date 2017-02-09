@@ -160,3 +160,18 @@ p+geom_point(size=3,alpha=0.8,
                  shape=factor(litter$gesttime))
              )
 ```
+###因素分析
+```R
+rawdata <- read.table("data.csv", header = T, sep = ",")
+dtq12 <- rawdata[c("Q12_A1", "Q12_A2","Q12_A3","Q12_A4","Q12_A5",
+                   "Q12_A6", "Q12_A7","Q12_A8","Q12_A9","Q12_A10",
+                   "Q12_A11", "Q12_A12","Q12_A13","Q12_A14")]
+dtq12[is.na(dtq12)] <- 5
+core <- cor(dtq12)
+core <- round(core, 2)
+write.csv(core, "core.csv")
+library(psych)
+principal(core)
+fa.parallel(core, fa="both", n.iter = 357, show.legend = T)
+principal(core,nfactors = 6)
+```
