@@ -15,6 +15,9 @@ accdata <- dcast(subdata, Sub~Setsize, mean)
 names(accdata)[2:5] <- c("setsize2", "setsize3", "setsize4", "setsize5")
 # 按行（被试）计算平均值
 accdata$ave <- apply(accdata[,2:5],1,mean)
+
+#选入观测，计算每名被试在不同的setsize下的HIT(BM不变时正确率)与CR（BM变化时的正确率）
+stddata <- dcast(subdata, Sub + BmChange ~ Setsize, mean)
 # 把accdata 融合melt成长型数据
 md = melt(accdata, id=c("Sub"))
 # 通过箱线图表现不同setsize水平下，被试的正确率分布
