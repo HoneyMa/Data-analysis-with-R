@@ -166,19 +166,27 @@ rawdata <- read.table("data.csv", header = T, sep = ",")
 dtq12 <- rawdata[c("Q12_A1", "Q12_A2","Q12_A3","Q12_A4","Q12_A5",
                    "Q12_A6", "Q12_A7","Q12_A8","Q12_A9","Q12_A10",
                    "Q12_A11", "Q12_A12","Q12_A13","Q12_A14")]
+#利用JSON串替换列名
+library('rjson')
+code <- fromJSON(file="code.json")
+items <- c(code$Q12$code$"Q12_A1", code$Q12$code$"Q12_A2",code$Q12$code$"Q12_A3", code$Q12$code$"Q12_A4",
+           code$Q12$code$"Q12_A5", code$Q12$code$"Q12_A6",code$Q12$code$"Q12_A7", code$Q12$code$"Q12_A8",
+           code$Q12$code$"Q12_A9", code$Q12$code$"Q12_A10",code$Q12$code$"Q12_A11", code$Q12$code$"Q12_A12",
+           code$Q12$code$"Q12_A13", code$Q12$code$"Q12_A14")
+names(dtq12)[1:14] <- items 
+
+
+#将缺失值替换为5
 dtq12[is.na(dtq12)] <- 5
-core <- cor(dtq12)
-core <- round(core, 2)
+#获得相关矩阵
+core <- round(cor(dtq12),2)
+#将相关矩阵保存在excel中
 write.csv(core, "core.csv")
+
+#因子分析
 library(psych)
 principal(core)
 fa.parallel(core, fa="both", n.iter = 357, show.legend = T)
 principal(core,nfactors = 6)
-#利用JSON直接替换选项与问题
-install.packages("rjson")
-library('rjson')
-code <- fromJSON(file="code.json")
-code$Q1$code$"1"
-code$Q1$content
 
 ```
