@@ -35,8 +35,9 @@ wordcloud2(miui, size = 2, fontFamily = "微软雅黑",
 # 文字形式
 letterCloud(miui, word = "MIUI", wordSize = 2,color = 'random-dark',backgroundColor = "snow")
 
+#![wordcloud1](wordcloud_women.png)
 ```
-![wordcloud1](wordcloud_women.png)
+ <img src="https://github.com/HoneyMa/Data-analysis-with-R/blob/master/data%20visualization/wordcloud_women.png" width = "500" height = "500" alt="地图数据" align=center />
 
 #地图数据可视化
 参考文章：http://cos.name/2009/07/drawing-china-map-using-r/
@@ -83,6 +84,4 @@ plot(x,col=getColor(x,provname,provcol,"white"),xlab="",ylab="")
 #      4768,845,2816,8127,3762,4514,284,3748,2617,
 #      552,610,2095,2296,693)
 ```
-
-
- <img src="https://github.com/HoneyMa/Data-analysis-with-R/blob/master/data%20visualization/%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE.png" width = "200" height = "200" alt="地图数据" align=center />
+ <img src="https://github.com/HoneyMa/Data-analysis-with-R/blob/master/data%20visualization/%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE.png" width = "500" height = "500" alt="地图数据" align=center />
