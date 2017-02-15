@@ -36,7 +36,7 @@ wordcloud2(miui, size = 2, fontFamily = "微软雅黑",
 letterCloud(miui, word = "MIUI", wordSize = 2,color = 'random-dark',backgroundColor = "snow")
 
 ```
-![wordcloud1](wordcloud_women.png)
+![wordcloud1](wordcloud_women.png =100×100)
 
 #地图数据可视化
 参考文章：http://cos.name/2009/07/drawing-china-map-using-r/
