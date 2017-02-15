@@ -41,6 +41,7 @@ letterCloud(miui, word = "MIUI", wordSize = 2,color = 'random-dark',backgroundCo
 
 #地图数据可视化
 参考文章：http://cos.name/2009/07/drawing-china-map-using-r/
+        http://echarts.baidu.com/gallery/editor.html?c=map-china-dataRange
 ```R
 # map
 library(maps)
