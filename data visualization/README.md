@@ -84,5 +84,5 @@ plot(x,col=getColor(x,provname,provcol,"white"),xlab="",ylab="")
 #      552,610,2095,2296,693)
 ```
 
-![](地图数据.png)
- <img src="./xxx.png" width = "200" height = "200" alt="地图数据" align=center />
+
+ <img src="https://github.com/HoneyMa/Data-analysis-with-R/blob/master/data%20visualization/%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE.png" width = "200" height = "200" alt="地图数据" align=center />
