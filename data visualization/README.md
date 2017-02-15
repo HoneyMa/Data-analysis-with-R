@@ -13,6 +13,8 @@ sankeyNetwork(Links = links, Nodes = nodes, Source = "source",
 ```
 
 # wordcloud
+在线的词云图制作软件,之前实习的时候用到过，当时没把网址保存下来，后来怎么都再找不到。。。
+Tadxedo:http://www.tagxedo.com/ 
 ```R
 #1、 首先安装包
 #install.packages("wordcloud2")
