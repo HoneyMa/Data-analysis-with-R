@@ -161,8 +161,19 @@ p+geom_point(size=3,alpha=0.8,
              )
 ```
 ###因素分析
-```R
-rawdata <- read.table("data.csv", header = T, sep = ",")
+```Rrawdata <- read.table("data.csv", header = T, sep = ",")
+# 数据清理 先了解数据的整体情况，缺失值，极端值
+# 剔除答题时间特别长的或者特别短的问卷
+out <- boxplot(rawdata$所用时间.秒.) # $out列出了极端值
+# 观察极端值数据是否异常
+# 把极端值提出观测
+newdata <- rawdata[rawdata$所用时间.秒. >50 & rawdata$所用时间.秒. < 1833,]
+plot(density(newdata$所用时间.秒.))
+
+# 通过交叉表了解数据分布情况
+table(rawdata$Q35, rawdata$Q36)
+
+####对12题做因素分析，希望能够决定购买的意思做降维 
 dtq12 <- rawdata[c("Q12_A1", "Q12_A2","Q12_A3","Q12_A4","Q12_A5",
                    "Q12_A6", "Q12_A7","Q12_A8","Q12_A9","Q12_A10",
                    "Q12_A11", "Q12_A12","Q12_A13","Q12_A14")]
@@ -174,7 +185,12 @@ items <- c(code$Q12$code$"Q12_A1", code$Q12$code$"Q12_A2",code$Q12$code$"Q12_A3"
            code$Q12$code$"Q12_A9", code$Q12$code$"Q12_A10",code$Q12$code$"Q12_A11", code$Q12$code$"Q12_A12",
            code$Q12$code$"Q12_A13", code$Q12$code$"Q12_A14")
 names(dtq12)[1:14] <- items 
-
+#精简代码 我不想手动的敲这么多代码，可以直接索引需要的值
+w <- code$Q12$code   # 可以获得所有选项对应的内容，但是顺序是随机的，没有按照序号顺序
+qlist <- code$Q12$qlist #qlist 可以获得正确的选项序号，但是没有选项的内容
+# 这里我们需要将qlist的正确顺序与w的内容对应起来
+# w[qlist[1]] #获得qlist里中第一个元素的列名，如Q1_A1，然后在w里面找q1_a1的对应内容
+names(dtq12)[1:14]<-w[qlist] # 这里我们按顺序索引了qlist里面所有的列名，然后再一一对应其在w里面相应的内容
 
 #将缺失值替换为5
 dtq12[is.na(dtq12)] <- 5
@@ -188,5 +204,13 @@ library(psych)
 principal(core)
 fa.parallel(core, fa="both", n.iter = 357, show.legend = T)
 principal(core,nfactors = 6)
+
+
+mydata <- read.table("dd.csv", header = T, sep = ",")
+mydata <- na.omit(mydata)
+chisq.test(mydata)
+fisher.test(mydata)
+t.test(mydata)
+aov(mydata)
 
 ```
