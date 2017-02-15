@@ -41,7 +41,7 @@ letterCloud(miui, word = "MIUI", wordSize = 2,color = 'random-dark',backgroundCo
 
 #地图数据可视化
 参考文章：http://cos.name/2009/07/drawing-china-map-using-r/
-        http://echarts.baidu.com/gallery/editor.html?c=map-china-dataRange
+百度的在线编辑器： http://echarts.baidu.com/gallery/editor.html?c=map-china-dataRange
 ```R
 # map
 library(maps)
@@ -86,3 +86,6 @@ plot(x,col=getColor(x,provname,provcol,"white"),xlab="",ylab="")
 #      552,610,2095,2296,693)
 ```
  <img src="https://github.com/HoneyMa/Data-analysis-with-R/blob/master/data%20visualization/%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE.png" width = "500" height = "500" alt="地图数据" align=center />
+ 
+ 用百度的编辑器 把原始数据取对数
+  <img src=" https://github.com/HoneyMa/Data-analysis-with-R/blob/master/data%20visualization/pic/%E8%B0%83%E7%A0%94%E6%A0%B7%E6%9C%AC%E5%88%86%E5%B8%83%E6%83%85%E5%86%B5.png" width = "500" alt="地图数据" align=center />
