@@ -40,8 +40,8 @@ letterCloud(miui, word = "MIUI", wordSize = 2,color = 'random-dark',backgroundCo
  <img src="https://github.com/HoneyMa/Data-analysis-with-R/blob/master/data%20visualization/wordcloud_women.png" width = "500" height = "500" alt="地图数据" align=center />
 
 #地图数据可视化
-参考文章：http://cos.name/2009/07/drawing-china-map-using-r/
-百度的在线编辑器： http://echarts.baidu.com/gallery/editor.html?c=map-china-dataRange
+参考文章：http://cos.name/2009/07/drawing-china-map-using-r/ 
+百度的在线编辑器（可动态交互）： http://echarts.baidu.com/gallery/editor.html?c=map-china-dataRange
 ```R
 # map
 library(maps)
