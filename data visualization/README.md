@@ -84,4 +84,4 @@ plot(x,col=getColor(x,provname,provcol,"white"),xlab="",ylab="")
 #      552,610,2095,2296,693)
 ```
 
-![](地图数据.png =100*)
+![](地图数据.png)
