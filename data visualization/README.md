@@ -85,3 +85,4 @@ plot(x,col=getColor(x,provname,provcol,"white"),xlab="",ylab="")
 ```
 
 ![](地图数据.png)
+ <img src="./xxx.png" width = "200" height = "200" alt="地图数据" align=center />
