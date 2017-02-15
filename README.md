@@ -161,7 +161,8 @@ p+geom_point(size=3,alpha=0.8,
              )
 ```
 ###因素分析
-```Rrawdata <- read.table("data.csv", header = T, sep = ",")
+```R
+rawdata <- read.table("data.csv", header = T, sep = ",")
 # 数据清理 先了解数据的整体情况，缺失值，极端值
 # 剔除答题时间特别长的或者特别短的问卷
 out <- boxplot(rawdata$所用时间.秒.) # $out列出了极端值
