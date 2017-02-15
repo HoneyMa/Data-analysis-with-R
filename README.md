@@ -215,3 +215,5 @@ t.test(mydata)
 aov(mydata)
 
 ```
+## 对应分析
+发现一篇文章介绍的比较详细：http://blog.sina.com.cn/s/blog_5a8239800100uq7t.html
