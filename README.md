@@ -1,3 +1,5 @@
+http://statmethods.net/advstats/ca.html
+
 # 第二步：数据分析
 ## 1.Descriptive statistics
 ### 1.1 多组散点图
