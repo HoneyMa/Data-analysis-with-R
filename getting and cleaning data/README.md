@@ -1,6 +1,6 @@
 # 第一步：数据准备
 ## 1.Basic data management
-### 1.1 Data Input
+### 1.1 Data Input 数据导入
 There're 3 ways to get your data ready in R.
 First, you may call a edit window, like :
 ```R
@@ -28,7 +28,7 @@ leadership <- data.frame(manager, date, country, gender, age,
 ```
 Last, you could import files like csv, spss, excel etc. in R.
 
-### 1.2 Data Recode
+### 1.2 Data Recode 数据重新编码
 Sometimes you need recode the numeric data to category data for analyze. Like:
 ```R
 leadership$age[leadership$age == 99] <- NA
@@ -36,13 +36,13 @@ leadership$agecat [leadership$age > 75] <- "Elder"
 leadership$agecat [leadership$age >=55 & leadership$age <= 75] <- "Middle Aged"
 leadership$agecat [leadership$age < 55] <- "Young"
 ```
-### 1.3 Rename the variable
+### 1.3 Rename the variable 变量重命名
 ```R
 names(leadership)[1] <- "ManagerID"
 names(leadership)[2] <- "testDate"
 names(leadership)[6:10] <- c("item1", "item2", "item3", "item4", "item5")
 ```
-### 1.4 Select cases from the dataset
+### 1.4 Select cases from the dataset 从数据集中选择个案/索引
 You may select some cases or obversations from the whole dataset for further analyze, use this:
 ```R
 newdata <- leadership[leadership$gender == "M" & leadership$age >30]
@@ -93,8 +93,11 @@ roster <- roster[order(Lastname, Firstname), ]
 将函数应用于平行向量或列表||mapply
 
 
+
 ##2 数据重构/数据透视/reshape2
-  分析多选题时（每个选项0/1编码）遇到一个问题，在进行统计分析之前，需要获得分类变量的交叉频数表。本来，在excel中可通过数据透视表获得交叉频数表，但这table不知如何导入R。如果是单选题，可以在R中使用table函数获得频次表，但是多选题就无从下手了。在JSONG的提示下，试着在R中实现数据透视表的操作。
+  分析多选题时（每个选项0/1编码）遇到一个问题，在进行统计分析之前，需要获得分类变量的交叉频数表。
+  本来，在excel中可通过数据透视表获得交叉频数表，但这table不知如何导入R。
+  如果是单选题，可以在R中使用table函数获得频次表，但是多选题就无从下手了。在JSONG的提示下，试着在R中实现数据透视表的操作。
   原来竟是用reshape2。
   ```R
   library(reshape2)
