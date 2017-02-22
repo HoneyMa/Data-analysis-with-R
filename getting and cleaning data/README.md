@@ -91,3 +91,16 @@ roster <- roster[order(Lastname, Firstname), ]
 将函数应用于组数据|向量，分组因子|tapply(x,f,fun)
 将函数应用于行组|dataframe|by(dfrm, fact, fun) fact是分组因子
 将函数应用于平行向量或列表||mapply
+
+
+##2 数据重构/数据透视/reshape2
+  分析多选题时（每个选项0/1编码）遇到一个问题，在进行统计分析之前，需要获得分类变量的交叉频数表。本来，在excel中可通过数据透视表获得交叉频数表，但这table不知如何导入R。如果是单选题，可以在R中使用table函数获得频次表，但是多选题就无从下手了。在JSONG的提示下，试着在R中实现数据透视表的操作。
+  原来竟是用reshape2。
+  ```R
+  library(reshape2)
+  redata <- read.csv("reshape.csv", header = TRUE, sep = ",")
+  mdata <- melt(redata, id.vars = c("ID", "性别年龄"), variable.name = "factors")
+  mdata <- mdata[order(mdata$性别年龄),]
+  cdata <- dcast(mdata, 性别年龄~ factors, sum) # 获得性别年龄×购买影响因素的交叉频次表 重要！！这里变量名上不需要加引号
+  ```
+  
